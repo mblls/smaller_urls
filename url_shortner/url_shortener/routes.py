@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect
 from .models import Link
 from .extensions import db
 
@@ -7,7 +7,12 @@ short = Blueprint('short', __name__)
 
 @short.route('/<short_url>')
 def redirect_to_url(short_url):
-    pass
+    # we redirect to the original_url in our db that matches the new, shorter url
+    link = Link.query.filter_by(short_url=short_url).first_or_404()
+    # note that we had another person use a link from our db
+    link.visits += 1
+    db.session.commit()
+    return redirect(link.original_url)
 
 
 @short.route('/')
@@ -30,7 +35,9 @@ def add_link():
 
 @short.route('/stats')
 def stats():
-    pass
+    links = Link.query.all()
+
+    return render_template('stats.html', links=links)
 
 
 @short.errorhandler(404)
