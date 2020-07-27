@@ -1,4 +1,18 @@
-<form method="POST" action="{{ url_for('short.add_link') }}">
-    <input type="text" name="original_url">
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Etch a Sketch</title>
+    <link href="{{ url_for('static', filename='css/reset.css') }}"  rel="stylesheet" type="text/css" media="all">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <h1>Enter your link below for another terrible link (*but shorter!)</h1>
+    <div id="main_form">
+        <form method="POST" action="{{ url_for('short.add_link') }}">
+            <input type="text" name="original_url">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

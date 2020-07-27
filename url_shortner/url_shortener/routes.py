@@ -42,4 +42,4 @@ def stats():
 
 @short.errorhandler(404)
 def page_not_found(e):
-    return '', 404
+    return '<h1> Error 404 <br /> Hey Bud, not much here rn. </h1><p>Maybe try another link?</p>', 404

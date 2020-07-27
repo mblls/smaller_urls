@@ -1,0 +1,19 @@
+body{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 900;
+    font-size: x-large;
+    color: royalblue;
+}
+h1{
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
+#main_form{
+    display: flex;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+}

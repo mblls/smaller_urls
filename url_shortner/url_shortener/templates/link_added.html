@@ -1,2 +1,16 @@
-OLD LINK = {{ original_url }} <br />
-NEW LINK = {{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>World's worst link provider</title>
+    <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <h1>Enter your link below for another terrible link (*but shorter!)</h1>
+    <div id="main_form">
+        OLD LINK = {{ original_url }} <br />
+        NEW LINK = {{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}
+    </div>
+</body>
+</html>

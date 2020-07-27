@@ -10,7 +10,7 @@ class Link(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # this is what we are passing into our class
     original_url = db.Column(db.String(512))
-    # defaults to the gnerate function
+    # defaults to the generate function
     short_url = db.Column(db.String(3), unique=True)
     # every time someone uses a link, need to record
     visits = db.Column(db.Integer, default=0)

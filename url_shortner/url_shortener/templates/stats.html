@@ -1,6 +1,20 @@
-{% for link in links %}
-Original Url: {{ link.original_url }}
-Short Url: {{ link.short_url }}
-Visits: {{ link.visits }}
-<br />
-{% endfor %}
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>World's worst link provider</title>
+    <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <h1>Enter your link below for another terrible link (*but shorter!)</h1>
+    <div id="main_form">
+        {% for link in links %}
+        Original Url: {{ link.original_url }}
+        Short Url: {{ link.short_url }}
+        Visits: {{ link.visits }}
+        <br />
+        {% endfor %}
+    </div>
+</body>
+</html>

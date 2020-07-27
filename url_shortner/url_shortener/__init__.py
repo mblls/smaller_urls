@@ -5,8 +5,11 @@ from .extensions import db
 from .routes import short
 
 
+
 def create_app(config_file='settings.py'):
     app = Flask(__name__)
+
+    app.static_folder = 'templates'
 
     app.config.from_pyfile(config_file)
 
