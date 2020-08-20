@@ -1,8 +1,11 @@
 body{
-    font-family: 'Josefin Slab', serif;
+    display: flex;
     font-weight: 900;
     font-size: x-large;
     color: royalblue;
+    margin: auto;
+    padding: 50px;
+    background-color: yellow;
 }
 h1{
     text-align: center;
@@ -13,7 +16,8 @@ h1{
 #main_form{
     display: flex;
     text-align: center;
+    font-weight:100;
+    color: violet;
     margin: auto;
-    width: 500px;
     padding: 10px;
 }
